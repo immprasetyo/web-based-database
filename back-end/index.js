@@ -10,9 +10,9 @@ const app = express();
 // Load environment variables from .env file
 //dotenv.config();
 
-//const db_conn_string = process.env.db_conn_string_env
+const db_conn_string = process.env.db_conn_string_env
 
-mongoose.connect(DB_CONN_STRING, {
+mongoose.connect(db_conn_string, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
