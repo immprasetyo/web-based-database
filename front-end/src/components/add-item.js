@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const AddItem = () => {
+  const [brand, set_brand] = useState("");
+  const [product_name, set_product_name] = useState("");
+  const [nie_type, set_nie_type] = useState("New");
+  const navigate = useNavigate();
+
+  const save_item = async (x) => {
+    x.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/items", {
+        Brand: brand,
+        "Product Name": product_name,
+        "NIE Type": nie_type,
+      });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <div className="columns">
+      <div className="column is-half">
+        <form onSubmit={save_item}>
+          <div className="field">
+            <label className="label">Brand</label>
+            <div className="control">
+              <input
+                type="text"
+                className="input"
+                value={brand}
+                onChange={(x) => set_brand(x.target.value)}
+                placeholder="Brand"
+              />
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Product Name</label>
+            <div className="control">
+              <input
+                type="text"
+                className="input"
+                value={product_name}
+                onChange={(x) => set_product_name(x.target.value)}
+                placeholder="Product Name"
+              />
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">NIE Type</label>
+            <div className="control">
+              <div className="select is-fullwidth">
+                <select
+                  value={nie_type}
+                  onChange={(x) => set_nie_type(x.target.value)}
+                >
+                  <option value="New">New</option>
+                  <option value="Renewal">Renewal</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="field">
+            <div className="control">
+              <button type="submit" className="button is-success">
+                Save
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AddItem;

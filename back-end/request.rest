@@ -1,0 +1,28 @@
+###
+GET http://localhost:5000/items
+
+###
+POST http://localhost:5000/items
+Content-Type: application/json
+
+{
+    "Brand": "SHISEIDO",
+    "Product Name": "Blush 103",
+    "NIE Type": "Renewal"
+}
+
+###
+GET http://localhost:5000/items/64b2b14c97c0eb77138adb04
+
+###
+PATCH http://localhost:5000/items/64b2b14c97c0eb77138adb04
+Content-Type: application/json
+
+{
+    "Brand": "SHISEIDO",
+    "Product Name": "Blush 102",
+    "NIE Type": "Reformulation"
+}
+
+###
+DELETE http://localhost:5000/items/64b2b14c97c0eb77138adb04
