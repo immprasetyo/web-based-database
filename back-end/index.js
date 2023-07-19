@@ -12,7 +12,7 @@ const app = express();
 
 //const db_conn_string = process.env.db_conn_string_env
 
-mongoose.connect(db_conn_string, {
+mongoose.connect(DB_CONN_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
