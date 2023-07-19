@@ -3,14 +3,14 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import item_route from './routes/item-route.js';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 
 const app = express();
 
 // Load environment variables from .env file
-dotenv.config();
+//dotenv.config();
 
-const db_conn_string = process.env.db_conn_string_env
+//const db_conn_string = process.env.db_conn_string_env
 
 mongoose.connect(db_conn_string, {
     useNewUrlParser: true,
