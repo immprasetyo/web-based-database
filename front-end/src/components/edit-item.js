@@ -15,7 +15,7 @@ const EditItem = () => {
   }, []);
 
   const get_item_by_id = async () => {
-    const response = await axios.get(`http://localhost:5000/items/${id}`);
+    const response = await axios.get(`https://web-based-database-api.vercel.app/items/${id}`);
     set_brand(response.data["Brand"]);
     set_product_name(response.data["Product Name"]);
     set_nie_type(response.data["NIE Type"]);
