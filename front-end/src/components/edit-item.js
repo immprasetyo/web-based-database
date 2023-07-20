@@ -24,7 +24,7 @@ const EditItem = () => {
   const update_item = async (x) => {
     x.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/items/${id}`, {
+      await axios.patch(`https://web-based-database-api.vercel.app/items/${id}`, {
         Brand: brand,
         "Product Name": product_name,
         "NIE Type": nie_type,
