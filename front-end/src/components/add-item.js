@@ -11,7 +11,7 @@ const AddItem = () => {
   const save_item = async (x) => {
     x.preventDefault();
     try {
-      await axios.post("http://localhost:5000/items", {
+      await axios.post("https://web-based-database-api.vercel.app/items", {
         Brand: brand,
         "Product Name": product_name,
         "NIE Type": nie_type,
