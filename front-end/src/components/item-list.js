@@ -10,13 +10,13 @@ const ItemList = () => {
   }, []);
 
   const get_items = async () => {
-    const response = await axios.get("http://localhost:5000/items");
+    const response = await axios.get("https://web-based-database-api.vercel.app/items");
     set_items(response.data);
   };
 
   const delete_item = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/items/${id}`);
+      await axios.delete(`https://web-based-database-api.vercel.app/items/${id}`);
       get_items();
     } catch (error) {
       console.log(error);
